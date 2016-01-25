@@ -15,7 +15,7 @@ import javax.swing.JTextField;
  */
 public class Sooraj extends javax.swing.JFrame {
 
-    public static int ar[][];
+    public static int ar[][]=new int[9][9];
     /**
      * Creates new form Sooraj
      */
@@ -209,6 +209,7 @@ int[] t = new int[2];
         jTextField89 = new javax.swing.JTextField();
         jTextField90 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -220,12 +221,20 @@ int[] t = new int[2];
         });
 
         jButton2.setText("Reset");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jTextField79.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField79ActionPerformed(evt);
             }
         });
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Sudoku Solver Machine");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -420,6 +429,10 @@ int[] t = new int[2];
                         .addGap(1, 1, 1)
                         .addComponent(jTextField90, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(41, 41, 41))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(218, 218, 218)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(347, 347, 347))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -555,7 +568,9 @@ int[] t = new int[2];
                         .addComponent(jTextField82, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField83, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField84, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -564,7 +579,8 @@ int[] t = new int[2];
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          int i,j;
-         int ar[][] = null;
+         int ar[][] = new int[9][9];
+         this.ar=ar;
         String textfieldString;
         String jaju;
          JTextField myArray[] = new JTextField[]{jTextField10
@@ -660,14 +676,14 @@ int[] t = new int[2];
         
         for(i=0;i<81;i++){
             
-            if(myArray[i].getText()==null || myArray[i].getText().equals("")){
+            if(myArray[i].getText()==null || myArray[i].getText().toString().equals("")){
              my_input[i]=0;    
             }
             else
                 my_input[i]=Integer.parseInt(myArray[i].getText());
         }
         int k=0;
-        int temp;
+        int temp=0;
         for(i=0;i<9;i++){
             for(j=0;j<9;j++){
                 temp=my_input[k];
@@ -675,6 +691,7 @@ int[] t = new int[2];
                 k++;
             }
         }
+             this.ar=ar;
         int m=0;
         if(solve()){
             for ( i =0;i<ar.length;i++){
@@ -683,6 +700,7 @@ int[] t = new int[2];
 			//System.out.print(ar[i][j]+" ");
                     
                         myArray[m].setText(String.valueOf(ar[i][j]));
+                        m++;
 		}
 		//System.out.println("");
 	}
@@ -697,6 +715,99 @@ int[] t = new int[2];
     private void jTextField79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField79ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField79ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+            JTextField myArray[] = new JTextField[]{jTextField10
+,jTextField11
+,jTextField12
+,jTextField13
+,jTextField14
+,jTextField15
+,jTextField16
+,jTextField17
+,jTextField18
+,jTextField19
+,jTextField20
+,jTextField21
+,jTextField22
+,jTextField23
+,jTextField24
+,jTextField25
+,jTextField26
+,jTextField27
+,jTextField28
+,jTextField29
+,jTextField30
+,jTextField31
+,jTextField32
+,jTextField33
+,jTextField34
+,jTextField35
+,jTextField36
+,jTextField37
+,jTextField38
+,jTextField39
+,jTextField40
+,jTextField41
+,jTextField42
+,jTextField43
+,jTextField44
+,jTextField45
+,jTextField46
+,jTextField47
+,jTextField48
+,jTextField49
+,jTextField50
+,jTextField51
+,jTextField52
+,jTextField53
+,jTextField54
+,jTextField55
+,jTextField56
+,jTextField57
+,jTextField58
+,jTextField59
+,jTextField60
+,jTextField61
+,jTextField62
+,jTextField63
+,jTextField64
+,jTextField65
+,jTextField66
+,jTextField67
+,jTextField68
+,jTextField69
+,jTextField70
+,jTextField71
+,jTextField72
+,jTextField73
+,jTextField74
+,jTextField75
+,jTextField76
+,jTextField77
+,jTextField78
+,jTextField79
+,jTextField80
+,jTextField81
+,jTextField82
+,jTextField83
+,jTextField84
+,jTextField85
+,jTextField86
+,jTextField87
+,jTextField88
+,jTextField89
+,jTextField90
+};
+            int i;
+            for(i=0;i<81;i++){
+            myArray[i].setText("");
+            
+            }
+            
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -742,6 +853,7 @@ int[] t = new int[2];
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
